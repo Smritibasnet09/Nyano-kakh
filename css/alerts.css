@@ -1,0 +1,125 @@
+/* Alerts Page Specific Styles */
+
+/* Alerts Container */
+.alerts-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+  }
+  
+  /* Alert Card */
+  .alert-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    transition: transform var(--transition-fast);
+  }
+  
+  .alert-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .alert-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-lg);
+    flex-shrink: 0;
+  }
+  
+  .alert-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .alert-icon.temperature {
+    background-color: rgba(226, 133, 110, 0.1);
+    color: var(--primary);
+  }
+  
+  .alert-icon.heart-rate {
+    background-color: rgba(241, 200, 163, 0.1);
+    color: var(--secondary);
+  }
+  
+  .alert-icon.spo2 {
+    background-color: rgba(136, 168, 163, 0.1);
+    color: var(--tertiary);
+  }
+  
+  .alert-icon.blanket {
+    background-color: rgba(51, 51, 51, 0.1);
+    color: var(--text);
+  }
+  
+  .alert-info {
+    flex-grow: 1;
+  }
+  
+  .alert-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .alert-info p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text);
+  }
+  
+  .alert-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-sm);
+    min-width: 120px;
+  }
+  
+  .acknowledge-button {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .acknowledge-button:hover {
+    background-color: var(--light-gray);
+  }
+  
+  .alert-card.acknowledged {
+    opacity: 0.7;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .alert-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .alert-icon {
+      margin-right: 0;
+      margin-bottom: var(--spacing-md);
+    }
+  
+    .alert-info {
+      width: 100%;
+      margin-bottom: var(--spacing-md);
+    }
+  
+    .alert-status {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
