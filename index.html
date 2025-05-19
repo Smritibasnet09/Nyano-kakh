@@ -21,6 +21,7 @@
         <nav class="sidebar">
             <div class="logo-container">
                 <h1 class="logo">Nyano Kakh</h1>
+                <button id="logoutBtn" class="btn btn-logout hidden">Logout</button>
             </div>
             <ul class="nav-links">
                 <li class="nav-item active">
@@ -119,48 +120,36 @@
             </div>
 
             <!-- Vitals Cards -->
-            <div class="vitals-container">
-                <div class="vital-card temperature">
-                    <div class="vital-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
-                        </svg>
-                    </div>
-                    <div class="vital-info">
-                        <h2>Temperature</h2>
-                        <div class="vital-value">37.2°C</div>
-                        <div class="status-badge yellow">Slightly Elevated</div>
-                    </div>
-                </div>
+          <div class="vitals-container">
+    <div class="vital-card temperature">
+        <div class="vital-icon">🌡️</div>
+        <div class="vital-info">
+            <h2>Temperature</h2>
+            <div class="vital-value" id="tempValue">--</div>
+            <div class="status-badge" id="tempStatus">--</div>
+        </div>
+    </div>
 
-                <div class="vital-card heart-rate">
-                    <div class="vital-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </div>
-                    <div class="vital-info">
-                        <h2>Heart Rate</h2>
-                        <div class="vital-value">120 BPM</div>
-                        <div class="status-badge green">Normal</div>
-                    </div>
-                </div>
+    <div class="vital-card heart-rate">
+        <div class="vital-icon">💓</div>
+        <div class="vital-info">
+            <h2>Heart Rate</h2>
+            <div class="vital-value" id="pulseValue">--</div>
+            <div class="status-badge" id="pulseStatus">--</div>
+        </div>
+    </div>
 
-                <div class="vital-card spo2">
-                    <div class="vital-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 11V9a2 2 0 0 0-2-2H8.7a2 2 0 0 1-2-2 2 2 0 0 0-2-2H3"></path>
-                            <path d="M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8"></path>
-                            <path d="M13 13h3a2 2 0 0 0 2-2V8"></path>
-                        </svg>
-                    </div>
-                    <div class="vital-info">
-                        <h2>SpO2</h2>
-                        <div class="vital-value">98%</div>
-                        <div class="status-badge green">Normal</div>
-                    </div>
-                </div>
-            </div>
+    <div class="vital-card spo2">
+        <div class="vital-icon">🫁</div>
+        <div class="vital-info">
+            <h2>SpO2</h2>
+            <div class="vital-value" id="oxValue">--</div>
+            <div class="status-badge" id="oxStatus">--</div>
+        </div>
+    </div>
+</div>
+
+
 
             <!-- Blanket Control -->
             <div class="blanket-control">
@@ -168,7 +157,7 @@
                 <label class="toggle-switch">
                     <input type="checkbox" id="blanket-toggle" checked>
                     <span class="toggle-slider"></span>
-                    <span class="toggle-label">ON</span>
+                    <span class="toggle-label"></span>
                 </label>
             </div>
         
@@ -222,7 +211,20 @@
         </main>
     </div>
 
+       <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics-compat.js"></script>
+  
+  <!-- JS-Cookie Library -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="js/dataService.js"></script>
+
     <script src="js/navigation.js"></script>
+
     <script src="js/dashboard.js"></script>
 </body>
 </html>
